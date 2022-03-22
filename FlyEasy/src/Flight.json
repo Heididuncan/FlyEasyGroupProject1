@@ -1,0 +1,41 @@
+[
+    {
+        "ID": "0000001A",
+        "destinationCity": "New York City",
+        "destinationState": "New York",
+        "airline": "United Airlines",
+        "departureAirport": "CLT Douglas International AirPort",
+        "departureDate": "03/22/2022",
+        "arrivalAirport": "JFK International Airport",
+        "arrivalDate": "03/23/2022",
+        "seats": [
+                    {
+                        "seatName": "1A",
+                        "occupied": true,
+                        "exitRow": false
+                    }
+                 ],
+        "firstClass": true,
+        "purchaseNumTicket": 1,
+        "oneWay": false
+    },{
+        "ID": "0000001b",
+        "destinationCity": "Chicago",
+        "destinationState": "Illinois",
+        "airline": "Southwest",
+        "departureAirport": "CLT Douglas International AirPort",
+        "departureDate": "03/28/2022",
+        "arrivalAirport": "Chicago O'hare International Airport",
+        "arrivalDate": "03/29/2022",
+        "seats": [
+                    {
+                        "seatName": "2B",
+                        "occupied": false,
+                        "exitRow": true
+                    }
+                 ],
+        "firstClass":false,
+        "purchaseNumTicket": 1,
+        "oneWay": true
+    }
+]
