@@ -1,33 +1,27 @@
-//import java.util.ArrayList;
-//import javafx.util.converter.DateStringConverter;
 
 public class FlyEasyApplication {
 
-    //public static final String date = null;
-	private FlightSearch flightSearch;
     private UserList users;
+	private airportList cAirportList;
+	private FlightList aFlightList;
+	private HotelList aHotelList;
+	private RegisteredAirport currentAirport;
+	private RegisteredFlight currentFlight;
     private RegisteredUser currentUser;
+	private RegisteredHotel currentHotel;
 
     public FlyEasyApplication(){
-        flightSearch = FlightSearch.getInstance();
+
         users = UserList.getInstance();
+		cAirportList = airportList.getInstance();
+		aFlightList = FlightList.getInstance();
+		aHotelList = HotelList.getInstance();
     }
-	/** 
-	public ArrayList<FlightSearch> findFlights() {
-        return FlightSearch.haveFlight();
-        
-    }
-    public ArrayList<FlightSearch> findFlights(String keyword) {
-        return flight.haveFlight(keyword);
-        
-    }
-	*/
     //creates a new user account
-	public boolean createAccount(String userName, String firstName, String lastName, String email, long cardNum)
+	public boolean createAccount(String userName, String firstName, String lastName, String email, String cardNum)
 	{
 		return users.addUser(userName,  firstName,  lastName, email, cardNum);
 	}
-	
 	public boolean login(String userName) {
 		if(!users.haveUser(userName))return false;
 		
@@ -38,20 +32,58 @@ public class FlyEasyApplication {
 	public RegisteredUser getCurrentUser() {
 		return currentUser;
 	}
-	
-	//Returns true if item is found, and false otherwise
-	public boolean findItem(String date) {
-		return flightSearch.getFlight(date) != null;
+	public boolean findAirport(String city, String state){
+		if(!cAirportList.haveAirport(city, state)) return false;
+		currentAirport = cAirportList.getAirport(city, state);
+		return true;
 	}
-	public boolean purchase(String flightName) {
-		if(!findItem(flightName))return false;
-		
-		//checkout the item
-		//need a user then have them checkout an item
+	public boolean findArrivalAirport(String city, String state){
+		if(!cAirportList.haveAirport(city, state)) return false;
+		currentAirport = cAirportList.getAirport(city, state);
+		return true;
+	}
+	public boolean findHotel(String hotelCity, String hotelState){
+		if(!aHotelList.haveHotel(hotelCity, hotelState)) return false;
+		currentHotel = aHotelList.getHotel(hotelCity, hotelState);
+		return true;
+	}
+	public boolean findFlight(String departureDate){
+		if(!aFlightList.haveFlight(departureDate)) return false;
+		currentFlight = aFlightList.getFlight(departureDate);
+		return true;
+	}
+	public boolean purchase(RegisteredFlight registeredFlight) {
+		aFlightList.getFlights().remove(currentFlight);
 		return true;
 	}
 	public void logout() {
 		users.saveUsers();
+	}
+	public boolean createAirport(String city, String state, String airportName, String airportCode){
+		
+		return cAirportList.addAirport(city, state,  airportName, airportCode);
+	}
+	public boolean createFlight(String airline, String flightDepartureDate, String flightArrivalDate,
+        String departureTime, String arrivalTime, String gate, int seats, String seatColumn, String seatRow, int price){
+
+			return aFlightList.addFlight(airline, flightDepartureDate, flightArrivalDate, departureTime, arrivalTime, gate, seats, seatColumn, seatRow, price);
+	}
+	public boolean createHotel(String hotelName, String hotelCity, String hotelState, String roomType, String openRoom, String checkInDate, String checkOutDate, int price){
+		return aHotelList.addHotel(hotelName, hotelCity, hotelState, roomType, openRoom, checkInDate, checkOutDate, price);
+	}
+	public void exit(){
+		cAirportList.saveAirports();
+		aFlightList.saveFlights();
+		aHotelList.saveHotels();
+	}
+	public RegisteredAirport getCurrentAirport() {
+		return currentAirport;
+	}
+	public RegisteredFlight getCurrentFlight(){
+		return currentFlight;
+	}
+	public RegisteredHotel getCurrentHotel(){
+		return currentHotel;
 	}
     
 }
