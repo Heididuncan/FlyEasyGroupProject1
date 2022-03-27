@@ -326,11 +326,12 @@ public class FlyEasyUI {
     public static void main(String[] args){
 
         FlyEasyUI flyEasyInterface = new FlyEasyUI();
-		flyEasyInterface.runB();
-		flyEasyInterface.run();
-		
-		
-		
+	    
+		flyEasyInterface.runB(); // To run Main Menu Interface for User
+		flyEasyInterface.run(); // To run the developers menu
+		// Put flyEasyInterface.runB(); on top for the group. 
+	        //(it has things like add new hotel and flight listings. I also did airports because having it on the plane ticket messed up the search.)
+	       // When showing portia or to test the flyEasyInterface.run(); will show the main menu
 		
         
     }
