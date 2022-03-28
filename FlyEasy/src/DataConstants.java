@@ -27,10 +27,10 @@ public abstract class DataConstants {
      * I realized here that the map doesnt matter because if there are only 28 seats in every flight
      * then after assigning the column and row to the users it will be filled for the flight id.
      */
-    protected static final int SEATS = 0;
+    protected static final String SEATS = 0;
     protected static final String SEAT_COLUMN = "seatColumns";
     protected static final String SEAT_ROW = "seatRows";
-    protected static final int PRICE = 0;
+    protected static final String PRICE = 0;
     protected static final String HOTEL_ID = "hotelid";
     protected static final String HOTEL_NAME = "hotelName";
     protected static final String HOTEL_CITY = "hotelCity";
