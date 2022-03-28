@@ -1,4 +1,7 @@
 
+/**
+ * abstract class that lists all the data constants for the user information
+ */
 public abstract class DataConstants {
 
     protected static final String USER_FILE_NAME = "src/userList.json";
