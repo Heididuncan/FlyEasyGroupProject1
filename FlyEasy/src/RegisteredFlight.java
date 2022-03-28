@@ -8,13 +8,13 @@ public class RegisteredFlight {
     private String departureTime;
     private String arrivalTime;
     private String gate;
-    private int seats;
+    private String seats;
     private String seatColumn;
     private String seatRow;
-    private int price;
+    private String price;
 
     public RegisteredFlight(String airline, String flightDepartureDate, String flightArrivalDate,
-        String departureTime, String arrivalTime, String gate, int seats, String seatColumn, String seatRow, int price){
+        String departureTime, String arrivalTime, String gate, String seats, String seatColumn, String seatRow, String price){
 
             this.flightid = UUID.randomUUID();
             this.airline = airline;
@@ -29,7 +29,7 @@ public class RegisteredFlight {
             this.price = price;
     }
     public RegisteredFlight(UUID flightid, String airline, String flightDepartureDate, String flightArrivalDate,
-        String departureTime, String arrivalTime, String gate, int seats, String seatColumn, String seatRow, int price){
+        String departureTime, String arrivalTime, String gate, String seats, String seatColumn, String seatRow, String price){
 
             this.flightid = flightid;
             this.airline = airline;
@@ -64,7 +64,7 @@ public class RegisteredFlight {
     public String getGate(){
         return gate;
     }
-    public int getSeats(){
+    public String getSeats(){
         return seats;
     }
     public String getSeatColumn(){
@@ -73,7 +73,7 @@ public class RegisteredFlight {
     public String getSeatRow(){
         return seatRow;
     }
-    public int getPrice(){
+    public String getPrice(){
         return price;
     }
     public void setAirline(String airline){
@@ -94,7 +94,7 @@ public class RegisteredFlight {
     public void setGate(String gate){
         this.gate = gate;
     }
-    public void setSeats(int seats){
+    public void setSeats(String seats){
         this.seats = seats;
     }
     public void setSeatColumn(String seatColumn){
@@ -103,7 +103,7 @@ public class RegisteredFlight {
     public void setSeatRow(String seatRow){
         this.seatRow = seatRow;
     }
-    public void setPrice(int price){
+    public void setPrice(String price){
         this.price = price;
     }
 }

@@ -15,7 +15,7 @@ public class HotelList {
 		
 		return hotels;
 	}
-	public boolean addHotel(String hotelName, String hotelCity, String hotelState, String roomType, String openRoom, String checkInDate, String checkOutDate, int price) {
+	public boolean addHotel(String hotelName, String hotelCity, String hotelState, String roomType, String openRoom, String checkInDate, String checkOutDate, String price) {
         if(haveHotel(hotelCity, hotelState))return false;
 		
 		hotelList.add(new RegisteredHotel(hotelName, hotelCity, hotelState, roomType, openRoom, checkInDate, checkOutDate, price));

@@ -28,10 +28,10 @@ public class FlightDataLoader extends DataConstants{
                 String departureTime = (String)flightsJSON.get(DEPARTURE_TIME);
                 String arrivalTime = (String)flightsJSON.get(ARRIVAL_TIME);
                 String gate = (String)flightsJSON.get(GATE);
-                int seats = (int)flightsJSON.get(SEATS);
+                String seats = (String)flightsJSON.get(SEATS);
                 String seatColumn = (String)flightsJSON.get(SEAT_COLUMN);
                 String seatRow = (String)flightsJSON.get(SEAT_ROW);
-                int price = (int)flightJSON.get(PRICE);
+                String price = (String)flightJSON.get(PRICE);
 				allFlights.add(new RegisteredFlight(airline, flightDepartureDate, flightArrivalDate, 
                 departureTime, arrivalTime, gate, seats, seatColumn, seatRow, price));
 			}

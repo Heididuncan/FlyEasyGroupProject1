@@ -149,10 +149,10 @@ public class FlyEasyUI {
 		String departureTime = getField("Departure Time");
 		String arrivalTime = getField("Arrival Time");
 		String gate = getField("Gate");
-		int seats = getIntField("Total Seats");
+		String seats = getField("Total Seats");
 		String seatColumn = getField("Seat Column");
 		String seatRow = getField("Seat Row");
-		int price = getIntField("Price");
+		String price = getField("Price");
 		if(flyEasy.createFlight(airline, flightDepatureDate, flightArrivalDate, departureTime, arrivalTime, gate, seats, seatColumn, seatRow, price)) {
 			System.out.println("successfully created");
 		} else {
@@ -160,6 +160,7 @@ public class FlyEasyUI {
 		}
 	}
 	private void createHotel(){
+		int number = scanner.nextInt();
 		String hotelName = getField("Hotel Name");
 		String hotelCity = getField("Hotel City");
 		String hotelState = getField("Hotel State");
@@ -167,7 +168,7 @@ public class FlyEasyUI {
 		String openRoom = getField("Room Floor/Room Letter");
 		String checkInDate = getField("Check-In Date");
 		String checkOutDate = getField("Check-Out Date");
-		int price = getIntField("Price");
+		String price = getField("Price");
 		if(flyEasy.createHotel(hotelName, hotelCity, hotelState, roomType, openRoom, checkInDate, checkOutDate, price)){
 			System.out.println("successfully created");
 		}else{
@@ -179,6 +180,7 @@ public class FlyEasyUI {
 		return scanner.nextLine();
 	}
 	private int getIntField(String aPrompt){
+		
 		System.out.print(aPrompt + ": ");
 		return scanner.nextInt();
 	}
@@ -317,21 +319,22 @@ public class FlyEasyUI {
 					e.printStackTrace();
 				}
 			   }
-			   if(flyEasy.getCurrentFlight().getSeats() >= 1){
+			   /**
+			   if(flyEasy.getCurrentFlight().getSeats(). >= 1){
 				   RegisteredFlight flightInfo = flyEasy.getCurrentFlight();
 					flyEasy.purchase(flightInfo);
-		       } 	   
+		       } 
+			    */	   
 	}
 
     public static void main(String[] args){
 
         FlyEasyUI flyEasyInterface = new FlyEasyUI();
-	    
-		flyEasyInterface.runB(); // To run Main Menu Interface for User
-		flyEasyInterface.run(); // To run the developers menu
-		// Put flyEasyInterface.runB(); on top for the group. 
-	        //(it has things like add new hotel and flight listings. I also did airports because having it on the plane ticket messed up the search.)
-	       // When showing portia or to test the flyEasyInterface.run(); will show the main menu
+		flyEasyInterface.runB();
+		flyEasyInterface.run();
+		
+		
+		
 		
         
     }

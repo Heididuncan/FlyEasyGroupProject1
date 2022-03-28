@@ -28,7 +28,7 @@ public class HotelDataLoader extends DataConstants {
                 String openRoom = (String)hotelsJSON.get(OPEN_ROOM);
                 String checkInDate = (String)hotelsJSON.get(CHECK_IN_DATE);
                 String checkOutDate = (String)hotelsJSON.get(CHECK_OUT_DATE);
-                int price = (int)hotelsJSON.get(PRICE);
+                String price = (String)hotelsJSON.get(PRICE);
 				allHotels.add(new RegisteredHotel(hotelName, hotelCity, hotelState, roomType, openRoom, checkInDate, checkOutDate, price));
 			}
 			

@@ -9,9 +9,9 @@ public class RegisteredHotel {
     private String openRoom;
     private String checkInDate;
     private String checkOutDate;
-    private int price = 0;
+    private String price;
 
-    public RegisteredHotel(String hotelName, String hotelCity, String hotelState, String roomType, String openRoom, String checkInDate, String checkOutDate, int price){
+    public RegisteredHotel(String hotelName, String hotelCity, String hotelState, String roomType, String openRoom, String checkInDate, String checkOutDate, String price){
         this.hotelid = UUID.randomUUID();
         this.hotelName = hotelName;
         this.hotelCity = hotelCity;
@@ -22,7 +22,7 @@ public class RegisteredHotel {
         this.checkOutDate = checkOutDate;
         this.price = price;
     }
-    public RegisteredHotel(UUID hotelid, String hotelName, String hotelCity, String hotelState, String roomType, String openRoom, String checkInDate, String checkOutDate, int price){
+    public RegisteredHotel(UUID hotelid, String hotelName, String hotelCity, String hotelState, String roomType, String openRoom, String checkInDate, String checkOutDate, String price){
         this.hotelid = hotelid;
         this.hotelName = hotelName;
         this.hotelCity = hotelCity;
@@ -58,7 +58,7 @@ public class RegisteredHotel {
     public String getCheckOutDate(){
         return checkOutDate;
     }
-    public int getHotelPrice(){
+    public String getHotelPrice(){
         return price;
     }
     public void setHotelName(String hotelName){
@@ -82,7 +82,7 @@ public class RegisteredHotel {
     public void setCheckOutDate(String checkOutDate){
         this.checkOutDate = checkOutDate;
     }
-    public void setHotelPrice(){
+    public void setHotelPrice(String price){
         this.price = price;
     }
 

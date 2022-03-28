@@ -10,7 +10,7 @@ public class FlightList {
 	
 	public boolean addFlight(String airline, String flightDepartureDate, 
     String flightArrivalDate, String departureTime, String arrivalTime, String gate, 
-    int steats, String seatColumn, String seatRow, int price) {
+    String steats, String seatColumn, String seatRow, String price) {
         // I dont know if we care about this, well especially not yet
         //if(haveFlight(airline, flightDepartureDate, flightArrivalDate,
                // departureTime, arrivalTime, steats, seatColumn, seatRow))return false;

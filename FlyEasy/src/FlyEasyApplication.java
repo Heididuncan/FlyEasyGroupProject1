@@ -64,11 +64,11 @@ public class FlyEasyApplication {
 		return cAirportList.addAirport(city, state,  airportName, airportCode);
 	}
 	public boolean createFlight(String airline, String flightDepartureDate, String flightArrivalDate,
-        String departureTime, String arrivalTime, String gate, int seats, String seatColumn, String seatRow, int price){
+        String departureTime, String arrivalTime, String gate, String seats, String seatColumn, String seatRow, String price){
 
 			return aFlightList.addFlight(airline, flightDepartureDate, flightArrivalDate, departureTime, arrivalTime, gate, seats, seatColumn, seatRow, price);
 	}
-	public boolean createHotel(String hotelName, String hotelCity, String hotelState, String roomType, String openRoom, String checkInDate, String checkOutDate, int price){
+	public boolean createHotel(String hotelName, String hotelCity, String hotelState, String roomType, String openRoom, String checkInDate, String checkOutDate, String price){
 		return aHotelList.addHotel(hotelName, hotelCity, hotelState, roomType, openRoom, checkInDate, checkOutDate, price);
 	}
 	public void exit(){
