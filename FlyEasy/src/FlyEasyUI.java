@@ -179,7 +179,7 @@ public class FlyEasyUI {
 		return scanner.nextLine();
 	}
 	private int getIntField(String aPrompt){
-		System.out.println(aPrompt + ": ");
+		System.out.print(aPrompt + ": ");
 		return scanner.nextInt();
 	}
 	private void findAirports() {
