@@ -4,8 +4,14 @@ import java.util.ArrayList;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
+/**
+ * class that saves the data given by the user
+ */
 public class DataWriter extends DataConstants {
     
+	/**
+	 * saves the user information to register their account
+	 */
     public static void saveUsers() {
 		UserList users = UserList.getInstance();
 		ArrayList<RegisteredUser> userList = users.getUsers();
@@ -27,6 +33,11 @@ public class DataWriter extends DataConstants {
         }
 	}
 	
+	/**
+	 * returns the registered user information 
+	 * @param user
+	 * @return
+	 */
 	public static JSONObject getUserJSON(RegisteredUser user) {
 		JSONObject userDetails = new JSONObject();
 		userDetails.put(USER_ID, user.getId().toString());
