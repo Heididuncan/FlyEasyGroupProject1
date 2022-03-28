@@ -160,7 +160,7 @@ public class FlyEasyUI {
 		}
 	}
 	private void createHotel(){
-		int number = scanner.nextInt();
+		
 		String hotelName = getField("Hotel Name");
 		String hotelCity = getField("Hotel City");
 		String hotelState = getField("Hotel State");
