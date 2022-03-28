@@ -21,19 +21,19 @@ public abstract class DataConstants {
     protected static final String AIRPORTCODE = "airportCode";
     protected static final String FLIGHT_ID = "flightid";
     protected static final String AIRLINE = "airline";
-    protected static final String FLIGHT_DEPARTURE_DATE = "00/00/00";
-    protected static final String FLIGHT_ARRIVAL_DATE = "00/00/00";
-    protected static final String DEPARTURE_TIME = "00:00";
-    protected static final String ARRIVAL_TIME = "00:00";
+    protected static final String FLIGHT_DEPARTURE_DATE = "dd/mm/yy";
+    protected static final String FLIGHT_ARRIVAL_DATE = "dd/mm/yy";
+    protected static final String DEPARTURE_TIME = "hh:mm";
+    protected static final String ARRIVAL_TIME = "hh:mm";
     protected static final String GATE = "gate";
     /**
      * I realized here that the map doesnt matter because if there are only 28 seats in every flight
      * then after assigning the column and row to the users it will be filled for the flight id.
      */
-    protected static final String SEATS = "000.00";
+    protected static final String SEATS = "seats";
     protected static final String SEAT_COLUMN = "seatColumns";
     protected static final String SEAT_ROW = "seatRows";
-    protected static final String PRICE = "000.00";
+    protected static final String PRICE = "price";
     protected static final String HOTEL_ID = "hotelid";
     protected static final String HOTEL_NAME = "hotelName";
     protected static final String HOTEL_CITY = "hotelCity";
