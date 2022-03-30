@@ -1,4 +1,6 @@
-
+/**
+ * @author Dominic Campbell
+ */
 public class FlyEasyApplication {
 
     private UserList users;
