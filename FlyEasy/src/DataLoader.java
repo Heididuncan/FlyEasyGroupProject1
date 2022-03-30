@@ -1,3 +1,8 @@
+/**
+ * Data loader for FlyEazy
+ * @author Alex Phakdy
+ */
+
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.UUID;
@@ -12,7 +17,9 @@ public class DataLoader extends DataConstants {
 		ArrayList<RegisteredUser> users = new ArrayList<RegisteredUser>();
 		
 		try {
-             
+            /**
+			 * reads the user file name, loads in the users ID, first and last names, card number, email
+		 	 */ 
 			FileReader reader = new FileReader(USER_FILE_NAME);
 			org.json.simple.parser.JSONParser parser = new org.json.simple.parser.JSONParser();	
 			JSONArray peopleJSON = (JSONArray)new org.json.simple.parser.JSONParser().parse(reader);
@@ -30,7 +37,9 @@ public class DataLoader extends DataConstants {
 				String lastName = (String)personJSON.get(USER_LAST_NAME);
                 String email = (String)personJSON.get(EMAIL);
                 String cardNum = (String)personJSON.get(USER_CARDNUM);
-				
+			/**
+			 * adds a new user by username, first name, last name, email, and card number
+		 	 */
 				users.add(new RegisteredUser(id, userName, firstName, lastName, email, cardNum));
 			}
 			
