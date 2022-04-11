@@ -37,6 +37,6 @@ public class DataLoaderTest {
 	@Test
 	public void testGetUserFirstUserName() {
 		userList = DataLoader.getUsers();
-		assertEquals("pirateKing", userList.get(0).getUserName());
+		assertEquals("pirateKing", userList.get(1).getUserName());
 	}
 }

@@ -31,7 +31,7 @@ public class DataWriterTest {
         public void testWritingOneUser() {
             userList.add(new RegisteredUser("pirateKing", "Monkey D.", "Luffy", "pirateking@gmail.com", "4434 2343 2343 2345"));
             DataWriter.saveUsers();
-            assertEquals("pirateKing", DataLoader.getUsers().get(0).getUserName());
+            assertEquals("pirateKing", DataLoader.getUsers().get(1).getUserName());
         }
         @Test
         public void testWritingEmptyUser() {
