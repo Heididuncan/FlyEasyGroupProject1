@@ -22,19 +22,19 @@ public class DataWriterTest {
         
         
         @Test
-        void testWritingZeroUsers() {
+        public void testWritingZeroUsers() {
             userList = DataLoader.getUsers();
             assertEquals(0, userList.size());
         }
     
         @Test
-        void testWritingOneUser() {
+        public void testWritingOneUser() {
             userList.add(new RegisteredUser("pirateKing", "Monkey D.", "Luffy", "pirateking@gmail.com", "4434 2343 2343 2345"));
             DataWriter.saveUsers();
             assertEquals("pirateKing", DataLoader.getUsers().get(0).getUserName());
         }
         @Test
-        void testWritingEmptyUser() {
+        public void testWritingEmptyUser() {
             userList.add(new RegisteredUser("", "", "", "", ""));
             DataWriter.saveUsers();
             assertEquals("", DataLoader.getUsers().get(0).getUserName());

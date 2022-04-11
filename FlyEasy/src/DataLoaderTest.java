@@ -22,20 +22,20 @@ public class DataLoaderTest {
         DataWriter.saveUsers();
     }
     @Test
-	void testGetUsersSize() {
+	public void testGetUsersSize() {
 		userList = DataLoader.getUsers();
 		assertEquals(2, userList.size());
 	}
 
 	@Test
-	void testGetUsersSizeZero() {
+	public void testGetUsersSizeZero() {
 		UserList.getInstance().getUsers().clear();
 		DataWriter.saveUsers();
 		assertEquals(0, userList.size());
 	}
 	
 	@Test
-	void testGetUserFirstUserName() {
+	public void testGetUserFirstUserName() {
 		userList = DataLoader.getUsers();
 		assertEquals("pirateKing", userList.get(0).getUserName());
 	}
