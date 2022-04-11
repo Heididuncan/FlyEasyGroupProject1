@@ -3,13 +3,15 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 public class UserListTest {
     private UserList users = UserList.getInstance();
 	private ArrayList<RegisteredUser> userList = users.getUsers();
 	
-	@BeforeEach
+	@Before
 	public void setup() {
 		userList.clear();
 		userList.add(new RegisteredUser("pirateKing", "Monkey D.", "Luffy", "pirateking@gmail.com", "4434 2343 2343 2345"));
@@ -17,39 +19,39 @@ public class UserListTest {
 		DataWriter.saveUsers();
 	}
 	
-	@AfterEach
+	@After
 	public void tearDown() {
-		UserList.getInstance().getUsers().clear();
+		UserList.getInstance().getUsers().clear();;
 		DataWriter.saveUsers();
 	}
 	
 	
 	@Test
-	void testHaveUserValidFirstItem() {
+	public void testHaveUserValidFirstItem() {
 		boolean hasLuffy = users.haveUser("pirateKing");
 		assertTrue(hasLuffy);
 	}
 	
 	@Test
-	void testHaveUserValidLastItem() {
+	public void testHaveUserValidLastItem() {
 		boolean hasZoro = users.haveUser("onigiri");
 		assertTrue(hasZoro);
 	}
 	
 	@Test
-	void testHaveUserInValid() {
+	public void testHaveUserInValid() {
 		boolean hasSanji = users.haveUser("professionalSimp");
 		assertFalse(hasSanji);
 	}
 	
 	@Test
-	void testHaveUserEmpty() {
+	public void testHaveUserEmpty() {
 		boolean hasEmpty = users.haveUser("");
 		assertFalse(hasEmpty);
 	}
 	
 	@Test
-	void testHaveUserNull() {
+	public void testHaveUserNull() {
 		boolean hasNull = users.haveUser(null);
 		assertFalse(hasNull);
 	}
