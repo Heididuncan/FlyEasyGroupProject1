@@ -17,43 +17,42 @@ public class HotelListTest {
 	
 	@BeforeEach
 	public void setup() {
-		hotelList.add(new RegisteredHotel("Marriot", "Charlotte", "North Carolina", "open", "March 18", "March 22", "$150", null));
-		hotelList.add(new RegisteredHotel("Ritz-Carlton", "Los Angeles", "California", "open", "June 15", "June 20", "$800", null));
+		hotelList.clear();
+		hotelList.add(new RegisteredHotel("Marriott", "Charlotte", "North Carolina", "open", "March 18", "March 22", "$150", null));
+		hotelList.add(new RegisteredHotel("Ritz Carlton", "Los Angeles", "California", "open", "June 15", "June 20", "$800", null));
+		//DataWriter.saveHotels();
 	}
 	
 	@AfterEach
 	public void tearDown() {
 		hotels.getInstance().getHotels().clear();
+		//DataWriter.saveHotels();
 	}
 	
 	
 	@Test
 	public void testHaveHotelsValidFirstItem() {
-		boolean hasMarriot = HotelList.haveHotels("Marriot");
-		assertTrue(hasMarriot);
+		boolean hasMariott = hotels.haveHotel("Charlotte", "North Carolina");
+		assertTrue(hasMariott);
 	}
 	
 	@Test
 	public void testHaveHotelsValidLastItem() {
-		boolean hasRitzCarlton = hotels.haveHotels("bwhite");
+		boolean hasRitzCarlton = hotels.haveHotel("Los Angeles", "California");
 		assertTrue(hasRitzCarlton);
 	}
 	
 	@Test
-	public void testHaveHotelsInValid() {
-		boolean hasJoe = hotels.haveHotels("jsmith");
-		assertFalse(hasJoe);
-	}
-	
-	@Test
 	public void testHaveHotelEmpty() {
-		boolean hasEmpty = hotels.haveHotels("");
+		boolean hasEmpty = hotels.haveHotel("", "");
 		assertFalse(hasEmpty);
 	}
-	
+
 	@Test
 	public void testHaveHotelNull() {
-		boolean hasNull = hotels.haveHotels(null);
+		boolean hasNull = hotels.haveHotel(null, null);
 		assertFalse(hasNull);
 	}
+
+	
 }
