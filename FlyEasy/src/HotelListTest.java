@@ -1,5 +1,8 @@
 //import static org.junit.jupiter.api.Assertions.*;
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 import java.util.ArrayList;
 
 import org.junit.Test;
@@ -10,49 +13,46 @@ import org.junit.Test;
 
 public class HotelListTest {
 	private HotelList hotels = HotelList.getInstance();
-	private ArrayList<HotelList> HotelList = HotelList.getHotels();
+	private ArrayList<RegisteredHotel> hotelList = hotels.getHotels();
 	
 	@BeforeEach
 	public void setup() {
-		HotelList.clear();
-		HotelList.add(new RegisteredHotel("Marriot", "Charlotte", "North Carolina", "open", "March 18", "March 22", "$150"));
-		HotelList.add(new RegisteredHotel("Ritz-Carlton", "Los Angeles", "California", "open", "June 15", "June 20", "$800"));
-		DataWriter.saveHotels();
+		hotelList.add(new RegisteredHotel("Marriot", "Charlotte", "North Carolina", "open", "March 18", "March 22", "$150", null));
+		hotelList.add(new RegisteredHotel("Ritz-Carlton", "Los Angeles", "California", "open", "June 15", "June 20", "$800", null));
 	}
 	
 	@AfterEach
 	public void tearDown() {
 		hotels.getInstance().getHotels().clear();
-		DataWriter.saveHotels();
 	}
 	
 	
 	@Test
-	void testHaveHotelsValidFirstItem() {
-		boolean hasAmy = HotelList.haveHotel("asmith");
-		assertTrue(hasMariott);
+	public void testHaveHotelsValidFirstItem() {
+		boolean hasMarriot = HotelList.haveHotels("Marriot");
+		assertTrue(hasMarriot);
 	}
 	
 	@Test
-	void testHaveHotelsValidLastItem() {
-		boolean hasBob = hotels.haveHotels("bwhite");
-		assertTrue(hasBob);
+	public void testHaveHotelsValidLastItem() {
+		boolean hasRitzCarlton = hotels.haveHotels("bwhite");
+		assertTrue(hasRitzCarlton);
 	}
 	
 	@Test
-	void testHaveHotelsInValid() {
+	public void testHaveHotelsInValid() {
 		boolean hasJoe = hotels.haveHotels("jsmith");
 		assertFalse(hasJoe);
 	}
 	
 	@Test
-	void testHaveHotelEmpty() {
+	public void testHaveHotelEmpty() {
 		boolean hasEmpty = hotels.haveHotels("");
 		assertFalse(hasEmpty);
 	}
 	
 	@Test
-	void testHaveHotelNull() {
+	public void testHaveHotelNull() {
 		boolean hasNull = hotels.haveHotels(null);
 		assertFalse(hasNull);
 	}
